@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/home.css" />
+<div id="home-body-container">
+  <button class="open-button">Create your project</button>
+
+  
+  <%- include('./partials/_create-project') -%>
+
+  
+    <%- include('./partials/_project-list',{projects:projects}) -%>
+  
+</div>
+<script src="/js/general.js"></script>

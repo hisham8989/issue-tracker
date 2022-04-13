@@ -1,0 +1,15 @@
+footer {
+  max-height: 15vh;
+  background: linear-gradient(47deg, #d3d315, #0c907a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+@media only screen and (max-width: 600px) {
+  footer {
+    font-size: 0.9em;
+    padding: 0 6px;
+  }
+}

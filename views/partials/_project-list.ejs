@@ -1,0 +1,23 @@
+<ul id="project-list">
+  <% for( let project of projects ) { %>
+  <a href="/project/<%=project._id%>">
+    <li>
+      <table>
+        <tr>
+          <td>Name of project</td>
+          <td><p><%= project.name %></p></td>
+        </tr>
+        <tr>
+          <td>Describe</td>
+          <td><p><%= project.description %></p></td>
+        </tr>
+        <tr>
+          <td>Author</td>
+          <td><%= project.author %></td>
+        </tr>
+      </table>
+    </li></a
+  >
+  <hr />
+  <% } %>
+</ul>

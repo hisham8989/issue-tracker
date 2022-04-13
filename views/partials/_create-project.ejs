@@ -1,0 +1,21 @@
+<dialog class="modal" id="modal">
+    <h2>Creating a project</h2>
+    <div class="form-container">
+      <form action="/project/create" method="post">
+        <input name="name" type="text" placeholder="Name of project" required />
+        <fieldset>
+          <legend>Description</legend>
+          <textarea
+            name="description"
+            cols="40"
+            rows="15"
+            placeholder="Describe your project"
+            required
+          ></textarea>
+        </fieldset>
+        <input name="author" type="text" placeholder="Author" required />
+        <input type="submit" value="Create" />
+      </form>
+    </div>
+    <button class="close-button"><p>cancel</p></button>
+  </dialog>
