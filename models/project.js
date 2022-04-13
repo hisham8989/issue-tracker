@@ -14,11 +14,6 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    label: [
-      {
-        type: String,
-      },
-    ],
     issues: [
       {
         type: mongoose.Schema.Types.ObjectId,
