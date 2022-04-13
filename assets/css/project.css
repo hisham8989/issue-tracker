@@ -55,6 +55,7 @@
   border: none;
   resize: none;
   width: 100%;
+  height: 10vh;
 }
 .form-container form fieldset textarea:focus {
   outline: none;
@@ -101,9 +102,3 @@
   border-spacing: 1.5em;
 }
 
-
-@media screen and (max-width: 480px) {
-    .form-container form fieldset textarea {
-        min-height: 15vh;
-      }
-  }

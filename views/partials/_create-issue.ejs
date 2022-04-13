@@ -1,21 +1,41 @@
+<link rel="stylesheet" href="/css/issue.css" />
 <dialog class="modal" id="modal">
-    <h2>Creating Issue</h2>
-    <div class="form-container">
-      <form action="/project/<%=project._id%>" method="post">
-        <input name="name" type="text" placeholder="Title" required />
-        <fieldset>
-          <legend>Description</legend>
-          <textarea
-            name="description"
-            cols="40"
-            rows="15"
-            placeholder="Describe your project"
-            required
-          ></textarea>
-        </fieldset>
-        <input name="author" type="text" placeholder="Author" required />
-        <input type="submit" value="Create" />
-      </form>
-    </div>
-    <button class="close-button"><p>cancel</p></button>
-  </dialog>
+  <h2>Creating Issue</h2>
+  <div class="form-container">
+    <form action="/project/<%=project._id%>" method="post">
+      <input name="title" type="text" placeholder="Title" required />
+      <fieldset>
+        <legend>Description</legend>
+        <textarea
+          name="description"
+          cols="40"
+          rows="5"
+          placeholder="Describe your issue"
+          required
+        ></textarea>
+      </fieldset>
+      <% if (project.labels.length>0) { %>
+      <label for="">Attached labels : </label>
+      <div class="select">
+        <% for( let label of project.labels) { %>
+          <div class="select__item item-bg"><%= label %></div>
+          <% } %>
+      </div> 
+      <% } %>
+
+      <label for="labels">Attach labels : </label>
+      <select name="labels" class="custom-select" multiple>
+        <option value="bug">bug</option>
+        <option value="duplicate">duplicate</option>
+        <option value="invalid">invalid</option>
+        <option value="question">question</option>
+        <option value="help wanted">help wanted</option>
+        <option value="good first issue">good first issue</option>
+      </select>
+      <input name="author" type="text" placeholder="Author" required />
+      <input type="submit" value="Create" />
+    </form>
+  </div>
+  <button class="close-button"><p>cancel</p></button>
+</dialog>
+<script src="/js/issue.js"></script>

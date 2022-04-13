@@ -1,14 +1,33 @@
 <table id="project-table">
   <tr>
-    <td>Name of project</td>
+    <td>Name : </td>
     <td><p><%= project.name %></p></td>
   </tr>
   <tr>
-    <td>Describe</td>
+    <td>Description : </td>
     <td><p><%= project.description %></p></td>
   </tr>
   <tr>
-    <td>Author</td>
+    <td>Author : </td>
     <td><%= project.author %></td>
   </tr>
+  <% if (project.issues.length>0) { %>
+    <tr>
+      <td>Issues :</td>
+      <td>
+        <table class="labels-table">
+          <% for( let issue of project.issues ) { %>
+          <tr>
+            <td>
+              <% for( let label of issue.labels ) { %>
+                <td><%= label %></td>
+                <% } %>
+            </td>
+          </tr>
+          <% } %>
+        </table>
+      </td>
+    </tr>
+    <% } %>
+
 </table>
