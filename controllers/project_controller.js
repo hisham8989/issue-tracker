@@ -55,15 +55,10 @@ module.exports.createIssue = async function (req, res) {
   } catch (err) {
     console.log('Error is creating issue', err)
   }
-  // const issue = await Issue.create({
-  //   title: req.body.title,
-  //   description: req.body.description,
-  //   issues: req.body.issues,
-  //   author: req.body.author,
-  // })
-  // const project = Project.findById(req.params.projectId)
-  // project.issues.push(issue._id)
-  // await project.save()
+}
 
-  // return res.redirect('back')
+
+module.exports.filter = function (req,res,next) {
+  console.log(req.body);
+  next()
 }

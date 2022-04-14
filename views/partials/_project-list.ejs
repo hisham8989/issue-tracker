@@ -2,22 +2,20 @@
   <% for( let project of projects ) { %>
   <a href="/project/<%=project._id%>">
     <li>
-      <table>
+      <table class="rwd-table">
         <tr>
-          <td>Name of project :</td>
-          <td><p><%= project.name %></p></td>
+          <th>Name of project</th>
+          <th>Description</th>
+          <th>Author</th>
         </tr>
         <tr>
-          <td>Describe :</td>
-          <td><p><%= project.description %></p></td>
-        </tr>
-        <tr>
-          <td>Author</td>
-          <td><%= project.author %></td>
+          <td data-th="Name of project"><%= project.name %></td>
+          <td data-th="Description"><%= project.description %></td>
+          <td data-th="Author"><%= project.author %></td>
         </tr>
       </table>
     </li></a
   >
-  <hr />
+  <br />
   <% } %>
 </ul>

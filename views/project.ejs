@@ -2,8 +2,39 @@
 <div id="project-body-container">
   <button class="open-button">report a issue</button>
 
-  <%- include('./partials/_create-issue',{project:project}) -%>
-  <%- include('./partials/_project',{project:project}) -%>
-  
+  <%- include('./partials/_create-issue',{project:project}) -%> <%-
+  include('./partials/_project',{project:project}) -%> <% if
+  (project.issues.length>0) { %>
+  <form action="/project/<%=project._id%>" method="post">
+    <div>
+      <span>Select labels</span>
+      <% for( let label of project.labels) { %>
+      <input name="<%=label%>" type="checkbox" value="<%=label%>"/><%= label %> <% } %>
+    </div>
+    <select name="filterByAuthor" id="first">
+      <optgroup label="Filter By Author">
+        <option disabled value=""></option>
+        <% for( let issue of project.issues ) { %>
+        <option value="<%= issue.author %>"><%= issue.author %></option>
+        <% } %>
+      </optgroup>
+    </select>
+    <input type="text" name="filterBytitle" placeholder="Search by title" />
+    <input
+      type="text"
+      name="filterBydescrption"
+      placeholder="Search by description"
+    />
+    <button type="submit">Filter</button>
+  </form>
+  <div>List of issues with the project</div>
+
+  <ul>
+    <% for( let issue of project.issues ) { %>
+    <li><%= issue.title %></li>
+    <% } %>
+  </ul>
+  <% } %>
 </div>
+
 <script src="/js/general.js"></script>
