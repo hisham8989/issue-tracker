@@ -20,12 +20,12 @@ const projectSchema = new mongoose.Schema(
         ref: 'Issue',
       },
     ],
-    labels:[
-        {
-            type:String,
-            unique:true
-        }
-    ]
+    labels: [
+      {
+        type: String,
+        unique:true
+      },
+    ],
   },
   {
     timestamps: true,

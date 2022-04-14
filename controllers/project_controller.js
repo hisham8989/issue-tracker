@@ -1,12 +1,22 @@
 const Project = require('../models/project')
 const Issue = require('../models/issue')
-module.exports.createProject = async function (req, res) {
-  const project = await Project.create({
-    name: req.body.name,
-    description: req.body.description,
-    author: req.body.author,
-  })
-  return res.redirect('back')
+
+module.exports.createProject = function (req, res) {
+  Project.create(
+    {
+      name: req.body.name,
+      description: req.body.description,
+      author: req.body.author,
+    },
+    function (err, project) {
+      if (err) {
+        console.log('Error in creating project', err)
+        return res.send('<samp>Something went wrong with database</samp>')
+      }
+
+      return res.redirect('back')
+    }
+  )
 }
 
 module.exports.project = async function (req, res) {
@@ -29,6 +39,7 @@ module.exports.project = async function (req, res) {
 module.exports.createIssue = async function (req, res) {
   try {
     let project = await Project.findById(req.params.projectId)
+    console.log(req.body);
     if (project) {
       let issue = await Issue.create({
         title: req.body.title,
@@ -36,7 +47,7 @@ module.exports.createIssue = async function (req, res) {
         labels: req.body.labels,
         author: req.body.author,
       })
-
+      console.log(issue);
       project.issues.push(issue)
       for (let issueLabel of req.body.labels) {
         let isMatch = project.labels.find(
@@ -57,8 +68,7 @@ module.exports.createIssue = async function (req, res) {
   }
 }
 
-
-module.exports.filter = function (req,res,next) {
-  console.log(req.body);
+module.exports.filter = function (req, res, next) {
+  console.log(req.body)
   next()
 }
