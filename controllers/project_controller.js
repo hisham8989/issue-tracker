@@ -39,7 +39,7 @@ module.exports.project = async function (req, res) {
 module.exports.createIssue = async function (req, res) {
   try {
     let project = await Project.findById(req.params.projectId)
-    console.log(req.body);
+    console.log(req.body)
     if (project) {
       let issue = await Issue.create({
         title: req.body.title,
@@ -47,15 +47,25 @@ module.exports.createIssue = async function (req, res) {
         labels: req.body.labels,
         author: req.body.author,
       })
-      console.log(issue);
       project.issues.push(issue)
-      for (let issueLabel of req.body.labels) {
-        let isMatch = project.labels.find(
-          (projectLabel) => projectLabel == issueLabel
-        )
 
+      // console.log(req.body.labels,);
+
+      if (!(typeof req.body.labels === 'string')) {
+        for (let issueLabel of req.body.labels) {
+          let isMatch = project.labels.find(
+            (projectLabel) => projectLabel == issueLabel
+          )
+          if (!isMatch) {
+            project.labels.push(issueLabel)
+          }
+        }
+      } else {
+        let isMatch = project.labels.find(
+          (projectLabel) => projectLabel == req.body.labels
+        )
         if (!isMatch) {
-          project.labels.push(issueLabel)
+          project.labels.push(req.body.labels)
         }
       }
       project.save()
