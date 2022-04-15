@@ -4,11 +4,11 @@
 
   <%- include('./partials/_create-issue',{project:project}) -%> <%-
   include('./partials/_project',{project:project}) -%> <% if
-  (project.issues.length>0) { %>
-
-    <%- include('./partials/_filter-issues',{project:project}) -%>
-
-    <%- include('./partials/_issues-list',{issues:project.issues}) -%>
+  (project.issues.length>0) { %> <%-
+  include('./partials/_filter-issues',{project:project}) -%> <%-
+  include('./partials/_issues-list',{issues:project.issues}) -%>
+  <div id="issue-data" data-project-issues="<%=JSON.stringify(project.issues)%>"></div>
+  <script src="/js/filterIssues.js"></script>
   <% } %>
 </div>
 

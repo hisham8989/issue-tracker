@@ -78,7 +78,22 @@ module.exports.createIssue = async function (req, res) {
   }
 }
 
-module.exports.filter = function (req, res, next) {
-  console.log(req.body)
-  next()
-}
+// module.exports.filter = async function (req, res) {
+//   try {
+//     let project = await Project.findById(req.params.projectId).populate({
+//       path: 'issues',
+//     })
+//     if (!project) {
+//       return res.redirect('back')
+//     }
+//     console.log(project);
+//     console.log("i am from filter function from backend.,",req.data);
+//     // console.log(project);
+//     return res.render('project', {
+//       title: 'project',
+//       project,
+//     })
+//   } catch (err) {
+//     console.log('Error in finding project')
+//   }
+// }

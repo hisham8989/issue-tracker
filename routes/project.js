@@ -6,8 +6,6 @@ router.post('/create', projectController.createProject)
 
 router.get('/:projectId', projectController.project)
 
-router.post('/issue/:projectId', projectController.filter)
-
 router.post('/:projectId', projectController.createIssue)
 
 module.exports = router

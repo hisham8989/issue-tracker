@@ -1,7 +1,10 @@
-<div>List of issues with the project</div>
 
-<ul>
+<h1 style="font-weight: normal;
+letter-spacing: -1px;
+color: #34495E;">List of issues with the project</h1>
+
+<ul id="issues-list">
   <% for( let issue of issues ) { %>
-  <li><%= issue.title %></li>
+  <li style="list-style: none;"><%= issue.title %></li>
   <% } %>
 </ul>
