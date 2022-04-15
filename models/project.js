@@ -22,8 +22,7 @@ const projectSchema = new mongoose.Schema(
     ],
     labels: [
       {
-        type: String,
-        unique:true
+        type: String
       },
     ],
   },

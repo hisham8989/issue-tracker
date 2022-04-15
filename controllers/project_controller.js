@@ -39,7 +39,7 @@ module.exports.project = async function (req, res) {
 module.exports.createIssue = async function (req, res) {
   try {
     let project = await Project.findById(req.params.projectId)
-    console.log(req.body)
+
     if (project) {
       let issue = await Issue.create({
         title: req.body.title,
@@ -68,7 +68,7 @@ module.exports.createIssue = async function (req, res) {
           project.labels.push(req.body.labels)
         }
       }
-      project.save()
+      await project.save()
       return res.redirect(`back`)
     } else {
       return res.redirect('back')
