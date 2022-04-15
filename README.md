@@ -9,11 +9,11 @@ reporting issue regarding to that project
     Create a project 
 ![App Screenshot](./screenshots/createProject.png)
 
-    Prohject page
-![App Screenshot](./screenshots/projectPage.png)
+    Project page
+![App Screenshot](./screenshots/issuePage.png)
 
     Create a issue
-![App Screenshot](./screenshots/createIssue.png)
+![App Screenshot](./screenshots/createIssue.jpg)
 
 ## Features
 
