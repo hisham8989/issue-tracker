@@ -49,6 +49,7 @@ filterIssueForm.addEventListener('submit', function (e) {
   issueList.innerHTML = ''
   for (let issue of filteredIssues) {
     let listItem = document.createElement('li')
+    listItem.style.listStyle = 'none' 
     listItem.innerHTML = `<table id="filter-issue-table">
     <tr>
       <td>Title : </td>

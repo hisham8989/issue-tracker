@@ -1,28 +1,26 @@
-<link rel="stylesheet" href="/css/filter-issues.css">
-<form
-  action="/"
-  method="get"
-  id="filter-issue-form"
->
-  <div>
-    <span>Select labels</span>
+<link rel="stylesheet" href="/css/filter-issues.css" />
+<form action="/" method="get" id="filter-issue-form">
+  <span>Select labels</span>
+  <div class="select-container">
     <% for( let label of project.labels) { %>
-    <input type="checkbox" value="<%=label%>" /><%= label %> <% } %>
+    <input class="select__item" type="checkbox" value="<%=label%>" /><span><%= label
+      %></span> <% } %>
   </div>
-  <select name="filterByAuthor" id="first">
+  <div class="option-container">
+    <select name="filterByAuthor" id="first">
       <option value="">authors</option>
       <% for( let issue of project.issues ) { %>
       <option value="<%= issue.author %>"><%= issue.author %></option>
       <% } %>
-  </select>
-  <input type="text" name="filterBytitle" placeholder="Search by title" />
-  <input
-    type="text"
-    name="filterBydescrption"
-    placeholder="Search by description"
-  />
-  <button type="submit">Filter</button>
+    </select>
+    <input type="text" name="filterBytitle" placeholder="Search by title" />
+    <input
+      type="text"
+      name="filterBydescrption"
+      placeholder="Search by description"
+    />
+  </div>
+  <button class="filter-btn" type="submit">Filter</button>
 </form>
 
 <!-- Scripting for filter -->
-
