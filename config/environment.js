@@ -5,7 +5,7 @@ const development = {
   db: "test",
   cluster_host: "hishamprofessionals",
   key: "bir6o9z",
-  cluster_pass: "qgvaSackmhU1IJVo",
+  cluster_pass: process.env.CLUSTER_PASSWORD,
 };
 
 const production = {

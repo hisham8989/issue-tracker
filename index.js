@@ -21,8 +21,7 @@ app.set("view engine", "ejs"); // register the template engine
 
 app.use("/", require("./routes"));
 
-db.once("open", () => {
-  console.log("connected to MongoDb ::", env.db);
+db().then(() => {
   app.listen(port, () => {
     console.log(`app listening on port ${port}`);
   });
