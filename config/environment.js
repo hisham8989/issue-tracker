@@ -4,6 +4,7 @@ const development = {
     asset_path:"/assets",
     db: 'test',
     cluster_host:'hishamprofessionals',
+    key:"bir6o9z",
     cluster_pass:process.env.CLUSTER_PASSWORD
 }
 
@@ -12,6 +13,7 @@ const production = {
     asset_path:"/assets",
     db: 'test',
     cluster_host:'hishamprofessionals',
+    key:"bir6o9z",
     cluster_pass:process.env.CLUSTER_PASSWORD
 }
 
