@@ -2,7 +2,7 @@ require('dotenv').config()
 const development = {
     name:"development",
     asset_path:"/assets",
-    db: 'issue_tracker_development',
+    db: 'test',
     cluster_host:'hishamprofessionals',
     cluster_pass:process.env.CLUSTER_PASSWORD
 }
@@ -10,7 +10,7 @@ const development = {
 const production = {
     name:"production",
     asset_path:"/assets",
-    db: 'issue_tracker_production',
+    db: 'test',
     cluster_host:'hishamprofessionals',
     cluster_pass:process.env.CLUSTER_PASSWORD
 }
