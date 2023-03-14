@@ -5,7 +5,7 @@ const development = {
   db: "test",
   cluster_host: "hishamprofessionals",
   key: "bir6o9z",
-  cluster_pass: process.env.CLUSTER_PASSWORD,
+  cluster_pass: "qgvaSackmhU1IJVo",
 };
 
 const production = {
@@ -16,8 +16,6 @@ const production = {
   key: "bir6o9z",
   cluster_pass: process.env.CLUSTER_PASSWORD,
 };
-
-console.log("NOde environment", process.env.NODE_ENV);
 
 module.exports =
   eval(process.env.NODE_ENV) == undefined
