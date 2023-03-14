@@ -17,6 +17,8 @@ const production = {
   cluster_pass: process.env.CLUSTER_PASSWORD,
 };
 
+console.log("NOde environment", process.env.NODE_ENV);
+
 module.exports =
   eval(process.env.NODE_ENV) == undefined
     ? development
