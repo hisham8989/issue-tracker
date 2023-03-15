@@ -21,8 +21,22 @@ app.set("view engine", "ejs"); // register the template engine
 
 app.use("/", require("./routes"));
 
-db().then(() => {
-  app.listen(port, () => {
-    console.log(`app listening on port ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
 });
+
+// db.connect((err) => {
+//   app.listen(port, () => {
+//     console.log(`app listening on port ${port}`);
+//   });
+//   if (err) {
+//     console.log("Error :".err);
+//     db.close();
+//   }
+// });
+
+// db().then(() => {
+//   app.listen(port, () => {
+//     console.log(`app listening on port ${port}`);
+//   });
+// });

@@ -2,18 +2,18 @@ require("dotenv").config();
 const development = {
   name: "development",
   asset_path: "/assets",
-  db: "test",
-  cluster_host: "hishamprofessionals",
-  key: "bir6o9z",
+  db: process.env.DB_NAME,
+  cluster_host: process.env.CLUSTER_HOSTNAME,
+  key: process.env.CLUSTER_KEY,
   cluster_pass: process.env.CLUSTER_PASSWORD,
 };
 
 const production = {
   name: "production",
   asset_path: "/assets",
-  db: "test",
-  cluster_host: "hishamprofessionals",
-  key: "bir6o9z",
+  db: process.env.DB_NAME,
+  cluster_host: process.env.CLUSTER_HOSTNAME,
+  key: process.env.CLUSTER_KEY,
   cluster_pass: process.env.CLUSTER_PASSWORD,
 };
 
